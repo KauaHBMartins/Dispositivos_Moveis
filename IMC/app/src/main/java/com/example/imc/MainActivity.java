@@ -2,6 +2,7 @@ package com.example.imc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,5 +29,8 @@ public class MainActivity extends AppCompatActivity {
         String imc = String.valueOf( peso / (altura*altura));
         Log.d(imc, "calcularIMC: ");
         Toast.makeText(this, imc, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(),Resultado.class);
+        intent.putExtra("valorimc", imc);
+        startActivity(intent);
     }
 }
