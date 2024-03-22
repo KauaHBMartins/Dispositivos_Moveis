@@ -27,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
         double peso = Double.parseDouble(edPeso.getText().toString());
         double altura = Double.parseDouble(edAltura.getText().toString());
         String imc = String.valueOf( peso / (altura*altura));
+
         Log.d(imc, "calcularIMC: ");
         Toast.makeText(this, imc, Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent(getApplicationContext(),Resultado.class);
-        intent.putExtra("valorimc", imc);
+        intent.putExtra("altura", altura);
+        intent.putExtra("peso", peso);
         startActivity(intent);
     }
 }
